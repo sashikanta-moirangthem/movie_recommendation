@@ -3,6 +3,13 @@ import pickle
 import pandas as pd
 import requests
 
+file_url = "https://drive.usercontent.google.com/download?id=1Y3ME0qhaXRr2aHIecjlzHr50BFpfmlsu&export=download&authuser=0&confirm=t&uuid=66251f18-dfd8-48f8-af72-182bffb0fcfb"
+response = requests.get(file_url)
+
+# Save the file or process the content
+with open("similarity.pkl", "wb") as file:
+    file.write(response.content)
+
 # TMDB API configuration
 TMDB_API_KEY = "c0b8cdee5194a7169cec530d0a9a2618"
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
